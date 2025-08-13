@@ -1,0 +1,715 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="google-classic">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shatakshi Kapur - AI/ML Researcher & Computer Science Student</title>
+    <meta name="description" content="Portfolio of Shatakshi Kapur, AI/ML Researcher and Computer Science Student specializing in Python, Machine Learning, and Innovative Software Solutions.">
+    <meta name="keywords" content="AI, Machine Learning, Python, Computer Science, Software Developer, Portfolio">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Loading Screen -->
+    <div id="loading-screen" class="loading-screen">
+        <div class="loading-content">
+            <div class="loading-logo">
+                <div class="logo-text">
+                    <span class="loading-name" id="loading-name"></span>
+                    <div class="loading-cursor"></div>
+                </div>
+            </div>
+            <div class="loading-progress">
+                <div class="progress-bar">
+                    <div class="progress-fill"></div>
+                </div>
+                <p class="loading-text">Loading Portfolio...</p>
+            </div>
+        </div>
+        <div class="loading-particles"></div>
+    </div>
+
+    <!-- Particle Background -->
+    <div id="particle-background" class="particle-background">
+        <canvas id="particle-canvas"></canvas>
+    </div>
+
+    <!-- Mouse Trail -->
+    <div id="mouse-trail" class="mouse-trail"></div>
+
+    <!-- Theme Switcher -->
+    <div id="theme-switcher" class="theme-switcher">
+        <button id="theme-toggle" class="theme-toggle" aria-label="Change theme">
+            <div class="theme-toggle-content">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <circle cx="12" cy="12" r="3"></circle>
+                    <path d="M12 1v6m0 6v6m11-7h-6m-6 0H1"></path>
+                </svg>
+            </div>
+        </button>
+        <div id="theme-menu" class="theme-menu hidden">
+            <h4>Choose Theme</h4>
+            <div class="theme-options">
+                <button class="theme-option active" data-theme="google-classic">
+                    <div class="theme-preview google-classic"></div>
+                    Google Classic
+                </button>
+                <button class="theme-option" data-theme="material-green">
+                    <div class="theme-preview material-green"></div>
+                    Material Green
+                </button>
+                <button class="theme-option" data-theme="warm-orange">
+                    <div class="theme-preview warm-orange"></div>
+                    Warm Orange
+                </button>
+                <button class="theme-option" data-theme="soft-purple">
+                    <div class="theme-preview soft-purple"></div>
+                    Soft Purple
+                </button>
+                <button class="theme-option" data-theme="clean-cyan">
+                    <div class="theme-preview clean-cyan"></div>
+                    Clean Cyan
+                </button>
+                <button class="theme-option" data-theme="subtle-red">
+                    <div class="theme-preview subtle-red"></div>
+                    Subtle Red
+                </button>
+                <button class="theme-option" data-theme="modern-teal">
+                    <div class="theme-preview modern-teal"></div>
+                    Modern Teal
+                </button>
+                <button class="theme-option" data-theme="gentle-pink">
+                    <div class="theme-preview gentle-pink"></div>
+                    Gentle Pink
+                </button>
+                <button class="theme-option" data-theme="professional-navy">
+                    <div class="theme-preview professional-navy"></div>
+                    Professional Navy
+                </button>
+                <button class="theme-option" data-theme="minimal-gray">
+                    <div class="theme-preview minimal-gray"></div>
+                    Minimal Gray
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Navigation -->
+    <nav class="navbar" id="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <h3 class="floating-element">Shatakshi Kapur</h3>
+            </div>
+            <div class="nav-menu" id="nav-menu">
+                <a href="#home" class="nav-link">Home</a>
+                <a href="#about" class="nav-link">About</a>
+                <a href="#education" class="nav-link">Education</a>
+                <a href="#skills" class="nav-link">Skills</a>
+                <a href="#certifications" class="nav-link">Achievements</a>
+                <a href="#projects" class="nav-link">Projects</a>
+                <a href="#contact" class="nav-link">Contact</a>
+            </div>
+            <div class="nav-toggle" id="nav-toggle">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="hero-bg-gradient"></div>
+        <div class="container">
+            <div class="hero-content">
+                <div class="hero-text">
+                    <div class="hero-greeting">
+                        <span class="greeting-text floating-element">Hello, I'm</span>
+                    </div>
+                    <h1 class="hero-title">
+                        <span id="typewriter-title">Shatakshi Kapur</span>
+                        <span class="cursor blinking">|</span>
+                    </h1>
+                    <h2 class="hero-subtitle floating-element">AI/ML Researcher & Computer Science Student</h2>
+                    <p class="hero-description floating-element">Building intelligent solutions with Python, AI, and innovative thinking</p>
+                    <div class="hero-buttons floating-element">
+                        <button onclick="downloadResume()" class="btn btn--primary morphing-btn">Download Resume</button>
+                        <a href="#contact" class="btn btn--outline morphing-btn">Get In Touch</a>
+                        <a href="#projects" class="btn btn--secondary morphing-btn">View Projects</a>
+                    </div>
+                    <div class="hero-stats floating-element">
+                        <div class="stat-item glass-card">
+                            <span class="stat-number animated-counter" data-target="10">0</span>
+                            <span class="stat-label">AI/ML Projects</span>
+                        </div>
+                        <div class="stat-item glass-card">
+                            <span class="stat-number animated-counter" data-target="39">0</span>
+                            <span class="stat-label">Salesforce Badges</span>
+                        </div>
+                        <div class="stat-item glass-card">
+                            <span class="stat-number animated-counter" data-target="8.09">0</span>
+                            <span class="stat-label">GPA</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="hero-image">
+                    <div class="profile-card glass-card-3d floating-element">
+                        <div class="profile-image">
+                            <div class="profile-placeholder">
+                                <svg width="80" height="80" viewBox="0 0 80 80" fill="none">
+                                    <circle cx="40" cy="40" r="40" fill="var(--theme-accent)"/>
+                                    <circle cx="40" cy="30" r="12" fill="white"/>
+                                    <path d="M20 65c0-12 9-20 20-20s20 8 20 20" fill="white"/>
+                                </svg>
+                            </div>
+                        </div>
+                        <div class="profile-info">
+                            <h4>AI/ML Specialist</h4>
+                            <p>Python • Machine Learning • Deep Learning</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="about section-parallax">
+        <div class="container">
+            <div class="section-header fade-in-element">
+                <h2 class="section-title">About Me</h2>
+                <p class="section-subtitle">Passionate about AI/ML and innovative software solutions</p>
+            </div>
+            <div class="about-content">
+                <div class="about-text fade-in-element">
+                    <p>I'm an AI/ML researcher and Computer Science student currently pursuing my B.Tech in Computer Science with specialization in Artificial Intelligence & Machine Learning at PSIT Kanpur. With a strong foundation in Python and a growing expertise in Java, I'm passionate about building impactful software solutions.</p>
+                    <p>My journey in tech is driven by curiosity and a detail-oriented approach to problem-solving. I specialize in machine learning, computer vision, and natural language processing, constantly exploring new ways to leverage AI for real-world applications.</p>
+                    <div class="about-highlights">
+                        <div class="highlight-item glass-card">
+                            <h4>🎯 Current Focus</h4>
+                            <p>B.Tech CSE (AI & ML) at PSIT Kanpur with 8.09 GPA</p>
+                        </div>
+                        <div class="highlight-item glass-card">
+                            <h4>🚀 Interests</h4>
+                            <p>AI/ML Research, Open Source, Anime, Writing, Tech Events</p>
+                        </div>
+                        <div class="highlight-item glass-card">
+                            <h4>💡 Goal</h4>
+                            <p>Building intelligent systems that solve complex problems</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="about-image fade-in-element">
+                    <div class="tech-stack">
+                        <div class="tech-item floating-tech">Python</div>
+                        <div class="tech-item floating-tech">Machine Learning</div>
+                        <div class="tech-item floating-tech">Computer Vision</div>
+                        <div class="tech-item floating-tech">Deep Learning</div>
+                        <div class="tech-item floating-tech">PyTorch</div>
+                        <div class="tech-item floating-tech">TensorFlow</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Education Section -->
+    <section id="education" class="education section-parallax">
+        <div class="container">
+            <div class="section-header fade-in-element">
+                <h2 class="section-title">Education</h2>
+                <p class="section-subtitle">Academic journey and achievements</p>
+            </div>
+            <div class="education-timeline">
+                <div class="timeline-item fade-in-element">
+                    <div class="timeline-dot animated-dot"></div>
+                    <div class="timeline-content">
+                        <div class="card glass-card-3d">
+                            <div class="card__body">
+                                <div class="education-header">
+                                    <h3>Bachelor of Technology</h3>
+                                    <span class="duration">Dec 2022 - Present</span>
+                                </div>
+                                <h4>Computer Science (Artificial Intelligence & Machine Learning)</h4>
+                                <p class="school">Pranveer Singh Institute of Technology (PSIT Kanpur)</p>
+                                <div class="gpa">
+                                    <span class="gpa-label">CGPA:</span>
+                                    <span class="gpa-value animated-badge">8.09/10</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="timeline-item fade-in-element">
+                    <div class="timeline-dot animated-dot"></div>
+                    <div class="timeline-content">
+                        <div class="card glass-card-3d">
+                            <div class="card__body">
+                                <div class="education-header">
+                                    <h3>Senior Secondary (XII - CBSE)</h3>
+                                    <span class="duration">Jan 2021 - Jan 2022</span>
+                                </div>
+                                <h4>Science</h4>
+                                <p class="school">Lucknow Public School</p>
+                                <div class="gpa">
+                                    <span class="gpa-label">Percentage:</span>
+                                    <span class="gpa-value animated-badge">89%</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="timeline-item fade-in-element">
+                    <div class="timeline-dot animated-dot"></div>
+                    <div class="timeline-content">
+                        <div class="card glass-card-3d">
+                            <div class="card__body">
+                                <div class="education-header">
+                                    <h3>High School (X - CBSE)</h3>
+                                    <span class="duration">Jan 2019 - Jan 2020</span>
+                                </div>
+                                <p class="school">Lucknow Public School</p>
+                                <div class="gpa">
+                                    <span class="gpa-label">Percentage:</span>
+                                    <span class="gpa-value animated-badge">92%</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section id="skills" class="skills section-parallax">
+        <div class="container">
+            <div class="section-header fade-in-element">
+                <h2 class="section-title">Technical Skills</h2>
+                <p class="section-subtitle">My technology stack and expertise areas</p>
+            </div>
+            <div class="skills-content">
+                <div class="skills-category fade-in-element">
+                    <h3>Programming Languages</h3>
+                    <div class="skill-bars">
+                        <div class="skill-bar glass-card">
+                            <div class="skill-info">
+                                <span class="skill-name">Python</span>
+                                <span class="skill-level">Advanced (90%)</span>
+                            </div>
+                            <div class="skill-progress">
+                                <div class="skill-fill animated-progress" data-width="90%"></div>
+                            </div>
+                        </div>
+                        <div class="skill-bar glass-card">
+                            <div class="skill-info">
+                                <span class="skill-name">HTML5 & CSS</span>
+                                <span class="skill-level">Advanced (85%)</span>
+                            </div>
+                            <div class="skill-progress">
+                                <div class="skill-fill animated-progress" data-width="85%"></div>
+                            </div>
+                        </div>
+                        <div class="skill-bar glass-card">
+                            <div class="skill-info">
+                                <span class="skill-name">C++</span>
+                                <span class="skill-level">Intermediate (75%)</span>
+                            </div>
+                            <div class="skill-progress">
+                                <div class="skill-fill animated-progress" data-width="75%"></div>
+                            </div>
+                        </div>
+                        <div class="skill-bar glass-card">
+                            <div class="skill-info">
+                                <span class="skill-name">SQL</span>
+                                <span class="skill-level">Intermediate (75%)</span>
+                            </div>
+                            <div class="skill-progress">
+                                <div class="skill-fill animated-progress" data-width="75%"></div>
+                            </div>
+                        </div>
+                        <div class="skill-bar glass-card">
+                            <div class="skill-info">
+                                <span class="skill-name">Java</span>
+                                <span class="skill-level">Transitioning (70%)</span>
+                            </div>
+                            <div class="skill-progress">
+                                <div class="skill-fill animated-progress" data-width="70%"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="skills-category fade-in-element">
+                    <h3>Frameworks & Tools</h3>
+                    <div class="framework-tags">
+                        <span class="framework-tag morphing-tag">React</span>
+                        <span class="framework-tag morphing-tag">Node.js</span>
+                        <span class="framework-tag morphing-tag">MERN Stack</span>
+                        <span class="framework-tag morphing-tag">PyTorch</span>
+                        <span class="framework-tag morphing-tag">TensorFlow</span>
+                        <span class="framework-tag morphing-tag">MediaPipe</span>
+                        <span class="framework-tag morphing-tag">Git/GitHub</span>
+                        <span class="framework-tag morphing-tag">Stable Diffusion</span>
+                    </div>
+                </div>
+                <div class="skills-category fade-in-element">
+                    <h3>AI/ML Specializations</h3>
+                    <div class="specialization-grid">
+                        <div class="spec-item glass-card-3d">
+                            <h4>Machine Learning</h4>
+                            <p>Supervised & Unsupervised Learning</p>
+                        </div>
+                        <div class="spec-item glass-card-3d">
+                            <h4>Deep Learning</h4>
+                            <p>Neural Networks & CNNs</p>
+                        </div>
+                        <div class="spec-item glass-card-3d">
+                            <h4>Computer Vision</h4>
+                            <p>Image Processing & Recognition</p>
+                        </div>
+                        <div class="spec-item glass-card-3d">
+                            <h4>NLP</h4>
+                            <p>Natural Language Processing</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Certifications Section - Enhanced with high contrast for Salesforce -->
+    <section id="certifications" class="certifications section-parallax">
+        <div class="container">
+            <div class="section-header fade-in-element">
+                <h2 class="section-title">Certifications & Achievements</h2>
+                <p class="section-subtitle">Professional certifications and platform achievements</p>
+            </div>
+            <div class="certifications-content">
+                <div class="platform-highlight fade-in-element">
+                    <div class="card salesforce-highlight">
+                        <div class="card__body">
+                            <div class="salesforce-header">
+                                <h3>Salesforce Trailblazer</h3>
+                                <div class="salesforce-logo">☁️</div>
+                            </div>
+                            <div class="platform-stats">
+                                <div class="stat salesforce-stat">
+                                    <span class="stat-number animated-counter" data-target="39">0</span>
+                                    <span class="stat-label">Badges</span>
+                                </div>
+                                <div class="stat salesforce-stat">
+                                    <span class="stat-number animated-counter" data-target="10.5">0</span>
+                                    <span class="stat-label">Points (K)</span>
+                                </div>
+                                <div class="stat salesforce-stat">
+                                    <span class="stat-number animated-counter" data-target="4">0</span>
+                                    <span class="stat-label">Trails</span>
+                                </div>
+                            </div>
+                            <p class="salesforce-description">Focus areas: AI Strategy, Data Cloud, Agentforce, CRM, Generative AI</p>
+                            <a href="https://www.salesforce.com/trailblazer/rqtt8pjo8peodshxme" target="_blank" rel="noopener noreferrer" class="btn btn--salesforce morphing-btn">View Profile</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="certificates-section">
+                    <div class="section-header-small">
+                        <h3>Certificates</h3>
+                    </div>
+                    <div id="certificates-grid" class="certificates-grid">
+                        <div class="cert-card glass-card-3d fade-in-element">
+                            <div class="cert-header">
+                                <h4>Problem Solving (Basic)</h4>
+                                <span class="platform-name">HackerRank</span>
+                            </div>
+                            <p>Fundamental problem-solving skills certification</p>
+                            <a href="https://www.hackerrank.com/certificates/1d55d04abfb9" target="_blank" rel="noopener noreferrer" class="cert-link">View Certificate</a>
+                        </div>
+                        <div class="cert-card glass-card-3d fade-in-element">
+                            <div class="cert-header">
+                                <h4>Python (Basic)</h4>
+                                <span class="platform-name">HackerRank</span>
+                            </div>
+                            <p>Python programming fundamentals certification</p>
+                            <a href="https://www.hackerrank.com/certificates/2f015c018a24" target="_blank" rel="noopener noreferrer" class="cert-link">View Certificate</a>
+                        </div>
+                        <div class="cert-card glass-card-3d fade-in-element">
+                            <div class="cert-header">
+                                <h4>C# (Basic)</h4>
+                                <span class="platform-name">HackerRank</span>
+                            </div>
+                            <p>C# programming fundamentals certification</p>
+                            <a href="https://www.hackerrank.com/profile/CS_2201641530210" target="_blank" rel="noopener noreferrer" class="cert-link">View Certificate</a>
+                        </div>
+                        <div class="cert-card glass-card-3d fade-in-element">
+                            <div class="cert-header">
+                                <h4>CSS (Basic)</h4>
+                                <span class="platform-name">HackerRank</span>
+                            </div>
+                            <p>CSS styling and design fundamentals</p>
+                            <a href="https://www.hackerrank.com/profile/CS_2201641530210" target="_blank" rel="noopener noreferrer" class="cert-link">View Certificate</a>
+                        </div>
+                        <div class="cert-card glass-card-3d hidden">
+                            <div class="cert-header">
+                                <h4>SQL (Basic)</h4>
+                                <span class="platform-name">HackerRank</span>
+                            </div>
+                            <p>Database querying and management</p>
+                            <a href="https://www.hackerrank.com/profile/CS_2201641530210" target="_blank" rel="noopener noreferrer" class="cert-link">View Certificate</a>
+                        </div>
+                        <div class="cert-card glass-card-3d hidden">
+                            <div class="cert-header">
+                                <h4>Credly Badges</h4>
+                                <span class="platform-name">Credly</span>
+                            </div>
+                            <p>Professional certification badges and achievements</p>
+                            <a href="https://www.credly.com/users/shatakshi-kapur/badges" target="_blank" rel="noopener noreferrer" class="cert-link">View Badges</a>
+                        </div>
+                        <div class="cert-card glass-card-3d hidden">
+                            <div class="cert-header">
+                                <h4>Springboard Certificates</h4>
+                                <span class="platform-name">Infosys</span>
+                            </div>
+                            <p>Professional development and skill enhancement</p>
+                            <a href="https://infyspringboard.onwingspan.com/web/en/app/profile/competency/certificate" target="_blank" rel="noopener noreferrer" class="cert-link">View Certificates</a>
+                        </div>
+                        <div class="cert-card glass-card-3d hidden">
+                            <div class="cert-header">
+                                <h4>Platform Profiles</h4>
+                                <span class="platform-name">Coding</span>
+                            </div>
+                            <p>Active participation in coding challenges</p>
+                            <div class="platform-links">
+                                <a href="https://github.com/KapurShatakshi" target="_blank" rel="noopener noreferrer" class="platform-link morphing-tag">GitHub</a>
+                                <a href="https://leetcode.com/u/CS_ShatskshiKapur15/" target="_blank" rel="noopener noreferrer" class="platform-link morphing-tag">LeetCode</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="show-more-container">
+                        <button id="certificates-show-more" class="btn btn--outline show-more-btn morphing-btn">Show More</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects" class="projects section-parallax">
+        <div class="container">
+            <div class="section-header fade-in-element">
+                <h2 class="section-title">Featured Projects</h2>
+                <p class="section-subtitle">AI/ML and software development projects</p>
+            </div>
+            <div id="projects-grid" class="projects-grid">
+                <div class="project-card glass-card-3d fade-in-element">
+                    <div class="project-type">AI/ML</div>
+                    <h3>AI Image Generator</h3>
+                    <p>Stable Diffusion v1.4 generates high-quality images from text prompts using Hugging Face's Diffusers. Running on CPU with PyTorch for deep learning.</p>
+                    <div class="project-tech">
+                        <span class="tech-tag morphing-tag">Python</span>
+                        <span class="tech-tag morphing-tag">PyTorch</span>
+                        <span class="tech-tag morphing-tag">Stable Diffusion</span>
+                        <span class="tech-tag morphing-tag">Hugging Face</span>
+                    </div>
+                    <a href="https://github.com/KapurShatakshi/AI-Image-Generator-" target="_blank" rel="noopener noreferrer" class="project-link">View on GitHub</a>
+                </div>
+                <div class="project-card glass-card-3d fade-in-element">
+                    <div class="project-type">AI/Security</div>
+                    <h3>Password Strength Checker AI</h3>
+                    <p>Analyzes password patterns in real time and guides users to improve password security using a smart GUI interface.</p>
+                    <div class="project-tech">
+                        <span class="tech-tag morphing-tag">Python</span>
+                        <span class="tech-tag morphing-tag">AI</span>
+                        <span class="tech-tag morphing-tag">GUI</span>
+                        <span class="tech-tag morphing-tag">Security</span>
+                    </div>
+                    <a href="https://github.com/KapurShatakshi/Python-Password-Generator-and-Strength-Checker" target="_blank" rel="noopener noreferrer" class="project-link">View on GitHub</a>
+                </div>
+                <div class="project-card glass-card-3d fade-in-element">
+                    <div class="project-type">Computer Vision</div>
+                    <h3>Gesture Emoji Recognition</h3>
+                    <p>Detects real-time hand gestures using MediaPipe and translates them into corresponding emojis for interactive communication.</p>
+                    <div class="project-tech">
+                        <span class="tech-tag morphing-tag">Python</span>
+                        <span class="tech-tag morphing-tag">MediaPipe</span>
+                        <span class="tech-tag morphing-tag">Computer Vision</span>
+                        <span class="tech-tag morphing-tag">OpenCV</span>
+                    </div>
+                    <a href="https://github.com/KapurShatakshi/Gesture-Emoji" target="_blank" rel="noopener noreferrer" class="project-link">View on GitHub</a>
+                </div>
+                <div class="project-card glass-card-3d fade-in-element">
+                    <div class="project-type">Audio AI</div>
+                    <h3>AI Voice Changer</h3>
+                    <p>Transforms recorded voice into multiple versions using pitch and speed adjustments with real-time processing capabilities.</p>
+                    <div class="project-tech">
+                        <span class="tech-tag morphing-tag">Python</span>
+                        <span class="tech-tag morphing-tag">Audio Processing</span>
+                        <span class="tech-tag morphing-tag">Signal Processing</span>
+                    </div>
+                    <a href="https://github.com/KapurShatakshi/Voice_Changer" target="_blank" rel="noopener noreferrer" class="project-link">View on GitHub</a>
+                </div>
+                <div class="project-card glass-card-3d hidden">
+                    <div class="project-type">Computer Vision</div>
+                    <h3>Gesture Calculator</h3>
+                    <p>Calculator controlled by hand gestures using MediaPipe, demonstrating practical applications of computer vision.</p>
+                    <div class="project-tech">
+                        <span class="tech-tag morphing-tag">Python</span>
+                        <span class="tech-tag morphing-tag">MediaPipe</span>
+                        <span class="tech-tag morphing-tag">Computer Vision</span>
+                        <span class="tech-tag morphing-tag">GUI</span>
+                    </div>
+                    <a href="https://github.com/KapurShatakshi/gesture_calculator" target="_blank" rel="noopener noreferrer" class="project-link">View on GitHub</a>
+                </div>
+                <div class="project-card glass-card-3d hidden">
+                    <div class="project-type">Machine Learning</div>
+                    <h3>Rainfall Prediction Classifier</h3>
+                    <p>Machine learning model for weather prediction using historical data and advanced classification algorithms.</p>
+                    <div class="project-tech">
+                        <span class="tech-tag morphing-tag">Python</span>
+                        <span class="tech-tag morphing-tag">Machine Learning</span>
+                        <span class="tech-tag morphing-tag">Data Science</span>
+                        <span class="tech-tag morphing-tag">Jupyter</span>
+                    </div>
+                    <a href="https://github.com/KapurShatakshi/rainfall_classifier" target="_blank" rel="noopener noreferrer" class="project-link">View on GitHub</a>
+                </div>
+                <div class="project-card glass-card-3d hidden">
+                    <div class="project-type">Game Development</div>
+                    <h3>Hangman Game GUI Edition</h3>
+                    <p>Interactive Hangman game with graphical user interface featuring word categories, difficulty levels, and visual feedback.</p>
+                    <div class="project-tech">
+                        <span class="tech-tag morphing-tag">Python</span>
+                        <span class="tech-tag morphing-tag">Tkinter</span>
+                        <span class="tech-tag morphing-tag">GUI</span>
+                        <span class="tech-tag morphing-tag">Game Logic</span>
+                    </div>
+                    <a href="https://github.com/KapurShatakshi/Python-Game" target="_blank" rel="noopener noreferrer" class="project-link">View on GitHub</a>
+                </div>
+                <div class="project-card glass-card-3d hidden">
+                    <div class="project-type">Web Development</div>
+                    <h3>SkillSwap App</h3>
+                    <p>Platform for skill exchange where users can teach and learn from each other, built with modern web technologies.</p>
+                    <div class="project-tech">
+                        <span class="tech-tag morphing-tag">JavaScript</span>
+                        <span class="tech-tag morphing-tag">Web Development</span>
+                        <span class="tech-tag morphing-tag">UI/UX</span>
+                    </div>
+                    <a href="https://github.com/KapurShatakshi/skillswap-app" target="_blank" rel="noopener noreferrer" class="project-link">View on GitHub</a>
+                </div>
+                <div class="project-card glass-card-3d hidden">
+                    <div class="project-type">AI/ML</div>
+                    <h3>AI Text To Image Generator</h3>
+                    <p>Advanced text-to-image generation system using cutting-edge AI models for creating artistic and realistic images from descriptions.</p>
+                    <div class="project-tech">
+                        <span class="tech-tag morphing-tag">Python</span>
+                        <span class="tech-tag morphing-tag">AI</span>
+                        <span class="tech-tag morphing-tag">Image Generation</span>
+                        <span class="tech-tag morphing-tag">Deep Learning</span>
+                    </div>
+                    <a href="https://github.com/KapurShatakshi/AI_Text_To_Image_Generator" target="_blank" rel="noopener noreferrer" class="project-link">View on GitHub</a>
+                </div>
+                <div class="project-card glass-card-3d hidden">
+                    <div class="project-type">Web Development</div>
+                    <h3>My Portfolio (React)</h3>
+                    <p>Personal portfolio website built with React showcasing projects, skills, and achievements with modern design and responsive layout.</p>
+                    <div class="project-tech">
+                        <span class="tech-tag morphing-tag">React</span>
+                        <span class="tech-tag morphing-tag">JavaScript</span>
+                        <span class="tech-tag morphing-tag">CSS3</span>
+                        <span class="tech-tag morphing-tag">Responsive</span>
+                    </div>
+                    <a href="https://github.com/KapurShatakshi/My-Portfolio" target="_blank" rel="noopener noreferrer" class="project-link">View on GitHub</a>
+                </div>
+            </div>
+            <div class="show-more-container">
+                <button id="projects-show-more" class="btn btn--outline show-more-btn morphing-btn">Show More</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact section-parallax">
+        <div class="container">
+            <div class="section-header fade-in-element">
+                <h2 class="section-title">Let's Connect</h2>
+                <p class="section-subtitle">Ready to collaborate on AI/ML projects and innovative solutions</p>
+            </div>
+            <div class="contact-content">
+                <div class="contact-info fade-in-element">
+                    <div class="contact-item glass-card">
+                        <h4>📧 Email</h4>
+                        <p>contact@shatakshikapur.com</p>
+                    </div>
+                    <div class="contact-item glass-card">
+                        <h4>📍 Location</h4>
+                        <p>Uttar Pradesh, India</p>
+                    </div>
+                    <div class="contact-item glass-card">
+                        <h4>🎯 Interests</h4>
+                        <p>AI/ML Research • Open Source • Tech Events</p>
+                    </div>
+                </div>
+                <div class="social-links fade-in-element">
+                    <h4>Connect with me</h4>
+                    <div class="social-grid">
+                        <a href="https://github.com/KapurShatakshi" target="_blank" rel="noopener noreferrer" class="social-link glass-card-3d">
+                            <span class="social-icon">📂</span>
+                            <div>
+                                <strong>GitHub</strong>
+                                <small>KapurShatakshi</small>
+                            </div>
+                        </a>
+                        <a href="https://www.linkedin.com/in/shatakshi-kapur-6b9a5025b/" target="_blank" rel="noopener noreferrer" class="social-link glass-card-3d">
+                            <span class="social-icon">💼</span>
+                            <div>
+                                <strong>LinkedIn</strong>
+                                <small>Professional Profile</small>
+                            </div>
+                        </a>
+                        <a href="https://leetcode.com/u/CS_ShatskshiKapur15/" target="_blank" rel="noopener noreferrer" class="social-link glass-card-3d">
+                            <span class="social-icon">🧩</span>
+                            <div>
+                                <strong>LeetCode</strong>
+                                <small>Problem Solving</small>
+                            </div>
+                        </a>
+                        <a href="https://www.hackerrank.com/profile/CS_2201641530210" target="_blank" rel="noopener noreferrer" class="social-link glass-card-3d">
+                            <span class="social-icon">🏆</span>
+                            <div>
+                                <strong>HackerRank</strong>
+                                <small>Certifications</small>
+                            </div>
+                        </a>
+                        <a href="https://www.salesforce.com/trailblazer/rqtt8pjo8peodshxme" target="_blank" rel="noopener noreferrer" class="social-link glass-card-3d salesforce-social">
+                            <span class="social-icon">☁️</span>
+                            <div>
+                                <strong>Salesforce</strong>
+                                <small>39 Badges</small>
+                            </div>
+                        </a>
+                        <a href="https://www.geeksforgeeks.org/user/2k22csaimtsb9/" target="_blank" rel="noopener noreferrer" class="social-link glass-card-3d">
+                            <span class="social-icon">💻</span>
+                            <div>
+                                <strong>GeeksforGeeks</strong>
+                                <small>Practice & Learn</small>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content fade-in-element">
+                <p>&copy; 2025 Shatakshi Kapur. All rights reserved.</p>
+                <p>Built with ❤️ for AI/ML innovation</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="app.js"></script>
+</body>
+</html>
